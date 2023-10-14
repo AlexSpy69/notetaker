@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "files.h"
+#include "../include/files.h"
 
 void showmanual();
 
