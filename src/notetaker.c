@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+#include <dirent.h>
+#include <unistd.h>
 #include "../include/files.h"
+#include "../include/stringcmp.h"
 
+void nshowall();
 void showmanual();
 
 int main(int argc, char* argv[]) {
@@ -26,6 +30,9 @@ int main(int argc, char* argv[]) {
         else if (strcmp(argv[1], "delete") == 0) {
             ndelete(argv[2]);
         }
+        else if (strcmp(argv[1], "showall") == 0) {
+            nshowall();
+        }
         else {
             redtext();
             printf("Wrong arguments given\n");
@@ -37,6 +44,25 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
+void nshowall() {
+    char cwd[256];
+    getcwd(cwd, sizeof(cwd));
+    bluetext();
+    printf("Current working directory: %s\n", cwd);
+    normaltext();
+    DIR *d;
+    struct dirent *dir;
+    d = opendir(cwd);
+    if (d) {
+        while ((dir = readdir(d)) != NULL) {
+            //if (prefix(".", dir->d_name)) {
+                printf("%s\n", dir->d_name);
+            //}
+        }
+        closedir(d);
+    }
+}
+
 void showmanual() {
     normaltext();
     printf("\nNOTE TAKER\n\n");
@@ -45,4 +71,5 @@ void showmanual() {
     printf("notetaker write *name*\n");
     printf("notetaker truncate *name*\n");
     printf("notetaker delete *name*\n");
+    printf("notetaker showall\n");
 }

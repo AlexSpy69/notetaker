@@ -49,7 +49,7 @@ void nwrite(char filename[]) {
         normaltext();
         exit(EXIT_FAILURE);
     }
-    char ch[100];
+    char ch[256];
     fgets(ch, sizeof(ch), stdin);
     int i;
     for (i=1; i>sizeof(ch); i++) {

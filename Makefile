@@ -1,2 +1,2 @@
 notetaker: src/notetaker.c
-	gcc src/notetaker.c -o notetaker
+	gcc src/notetaker.c -o bin/notetaker
