@@ -55,9 +55,7 @@ void nshowall() {
     d = opendir(cwd);
     if (d) {
         while ((dir = readdir(d)) != NULL) {
-            //if (prefix(".", dir->d_name)) {
-                printf("%s\n", dir->d_name);
-            //}
+            printf("%s\n", dir->d_name);
         }
         closedir(d);
     }
