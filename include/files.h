@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "textcolors.h"
+#include <textcolors.h>
 
 void ncreate(char filename[]) {
     FILE * fPtr;

@@ -2,8 +2,9 @@
 #include <string.h>
 #include <dirent.h>
 #include <unistd.h>
-#include "../include/files.h"
-#include "../include/stringcmp.h"
+
+#include <files.h>
+#include <stringcmp.h>
 
 void nshowall();
 void showmanual();
