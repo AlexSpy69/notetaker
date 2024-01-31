@@ -1,6 +1,6 @@
 #include <string.h>
-#include <stdbool.h>
+#include <stringcmp.h>
 
-bool prefix(const char *pre, const char *str) {
+int prefix(const char *pre, const char *str) {
     return strncmp(pre, str, strlen(pre)) == 0;
 }

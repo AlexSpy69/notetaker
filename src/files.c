@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <files.h>
 #include <textcolors.h>
 
 void ncreate(char filename[]) {
@@ -89,5 +90,5 @@ void ndelete(char filename[]) {
     }
 
     greentext();
-    printf("File removed\n");
+    printf("File %s removed\n", filename);
 }
