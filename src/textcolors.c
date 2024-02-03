@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <textcolors.h>
+#include "textcolors.h"
 
 void redtext() {
     printf("\033[1;31m");
